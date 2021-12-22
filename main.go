@@ -1,18 +1,12 @@
 package main
 
-import "fmt"
-
 func main() {
-	cards := newDeck()
+	cards := newDeckFromFile("my_cards")
+	// cards.shuffle()
+	// cards.print()
 
-	hand, remainingDeck := deal(cards, 5)
+	dealtHand, remainingHand := deal(cards, 4)
 
-	hand.print()
-	remainingDeck.print()
-
-	fmt.Println([]byte("Arnold Babasa"))
-}
-
-func newCard() string {
-	return "Five of Diamonds"
+	dealtHand.print()
+	remainingHand.print()
 }
